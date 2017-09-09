@@ -1,0 +1,28 @@
+<h3 style="color:blue;">
+    {{titulo}}
+</h3>
+<strong> Empleado estrella: </strong>
+<div *ngIf="trabajador_externo == true">
+    <button (click)= "cambiarExterno(false)">Mostrar empleado</button>
+    <ul>
+        <h1>Hola</h1>
+        <li>{{trabajadores[0].nombre}}</li>
+        <li>{{trabajadores[0].edad}} </li>
+        <li>{{trabajadores[0].cargo}}</li>
+        <li>{{trabajadores[0].contratado}}</li>
+        <li *ngIf="trabajadores[0].contratado == true">Esta contratado</li>
+        <li *ngIf="trabajadores[0].contratado == false">NO Esta contratado</li>
+    </ul>
+</div>
+
+<div *ngIf="trabajador_externo == false">
+    <button (click)= "cambiarExterno(true)">Mostrar trabajador</button>
+    <ul>
+        <li>{{empleado.nombre}}</li>
+        <li>{{empleado.edad}} </li>
+        <li>{{empleado.cargo}}</li>
+        <li>{{empleado.contratado}}</li>
+       <li *ngIf="empleado.contratado == true"> Esta contratado</li>
+       <li *ngIf="empleado.contratado == false">NO Esta contratado</li>
+    </ul>
+</div>
